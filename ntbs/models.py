@@ -11,4 +11,4 @@ class Ntbook(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('ntb_edit', kwargs={'pk': self.pk})
+        return reverse('ntbook_edit', kwargs={'pk': self.pk})
