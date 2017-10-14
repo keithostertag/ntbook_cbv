@@ -1,0 +1,64 @@
+<!doctype html>
+{% load static from staticfiles %}
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ntbook - a simple desktop code snippet database app</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/ntb.css' %}" />
+    {% comment %}the following static tag is for app specific CSS in other templates{% endcomment %}
+    {% block static %}{% endblock %}
+</head>
+
+    <body style="">
+        <div class="page-container">
+
+            <h2 class="fullsize">
+               ntbook - a simple desktop code snippet database app
+            </h2>
+
+            <h2 class="smallsize">
+              ntbook - desktop code snippet database
+           </h2>
+            <hr />
+
+            <div class="panel-container">
+
+                <div class="panel-left" >
+                  meta:<p><br>
+                    {% block meta %}{{ meta }}{% endblock%}
+                </div>
+
+                <div class="splitter">
+                </div>
+
+                <div class="panel-right">
+                  {% block content %}{{ ntbook }}{% endblock content%}
+                </div>
+
+            </div>     {% comment %}<!-- panel-container -->{% endcomment %}
+
+
+            <hr />
+
+            <div class="panel-bottom">
+              <div class="tags">tags:  </div>
+                {% block tags %}{{ tags }}{% endblock%}
+              <div class="nav">
+                  <button type="button" class="button">Create</button>
+                  <button type="button" class="button">Read</button>
+                  <button type="button" class="button">Update</button>
+                  <button type="button" class="button">Delete</button>
+                  <button type="button" class="button">?</button>
+                  <button type="button" class="button">Search</button>
+              </div>
+
+            </div>
+
+        </div>  {% comment %}<!-- page-container -->{% endcomment %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/jquery-resizeable.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/ntb.js' %}" type="text/javascript"></script>
+
+    </body>
+    </html>

@@ -1,0 +1,131 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.page-container {
+  height: 92%;
+  margin: 1rem;
+}
+
+
+/* horizontal panel*/
+
+.panel-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid silver;
+  overflow: hidden;
+  height: 92%;
+
+  /* avoid browser level touch actions */
+  xtouch-action: none;
+}
+
+.panel-left {
+  flex: 0 0 auto;
+  padding: 10px;
+  height: 100%;
+  /*-jer- setting width to 35% will make the panel-left element start out
+  a little smaller than the panel-right by default*/
+  width: 35%;
+  min-width: 10%;
+  max-width: 75%;
+  white-space: wrap;
+  background: #838383;
+  color: white;
+}
+
+.splitter {
+  flex: 0 0 auto;
+  width: 1rem;
+  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.panel-right {
+  flex: 1 1 auto;
+  /* resizable */
+  padding: 10px;
+  height: 100%;
+  min-width: 10%;
+  max-width: 90%;
+  background: #eee;
+}
+
+/*-jer- this rule allows the pre element to wrap IF it needs to*/
+.panel-right pre {
+  white-space: pre-wrap;
+}
+
+.panel-bottom {
+  display: flex;
+  flex-direction: row;
+  width:  100%;
+  /*-jer- place the items in the panel-bottom to the right*/
+  justify-content: flex-end;
+  height: 8%;
+  background: #eee;
+}
+
+.tags {
+  height: 100%;
+  flex: 3 1 auto;
+  background: #eee;
+  border: 1px solid silver;
+
+}
+
+.nav  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  /*-jer- make background of nav inherit parent background color*/
+  background: inherit;
+}
+
+.button {
+  background: #fff;
+  border: 1px solid silver;
+  /*-jer- added width and a little margin to make pretty*/
+  width: 65px;
+  margin: 5px;
+}
+
+/*hide smallsize heading for device width > 798*/
+.smallsize  {
+  display: none;
+}
+
+
+@media only screen and (max-width: 798px)  {
+
+.smallsize  {
+  display: block;
+}
+
+/*hide fullsize heading for device width <= 798*/
+.fullsize  {
+  display: none;
+}
+
+.panel-left {
+  min-width: 5rem;
+}
+
+
+} /*end media queries*/
