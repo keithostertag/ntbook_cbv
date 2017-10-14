@@ -1,11 +1,21 @@
-<h1>Ntbooks</h1>
+{% extends 'layout.html' %}
+
+
+{% block content %}
 <ul>
     {% for ntb in object_list %}
     <li>{{ ntb.name }}  :
-    <a href="{% url "ntb_edit" ntb.id %}">{{ ntb.ip }}</a>
+    <a href="{% url "ntb_edit" ntb.id %}">{{ ntb.meta }}</a>
     <a href="{% url "ntb_delete" ntb.id %}">delete</a>
     </li>
     {% endfor %}
 </ul>
+{% endblock content%}
+
+{% for ntb in object_list %}
+<li>{{ ntb.meta }}
+</li>
+{% endfor %}
+
 
 <a href="{% url "ntbook_new" %}">New</a>
