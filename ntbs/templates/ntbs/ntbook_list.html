@@ -15,12 +15,14 @@
 {% endblock content%}
 
 {% block meta %}
-{% for ntb in object_list %}
 <ul class="meta">
+{% for ntb in object_list %}
+  {% if ntb.meta %}
   <li> <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
       {{ ntb.meta }}</a>
   </li>
-</ul>
+{% endif %}
 {% endfor %}
+</ul>
 
 {% endblock meta%}
