@@ -5,7 +5,7 @@
 <ul>
     {% for ntb in object_list %}
     <li>{{ ntb.id }})
-      <a href="{% url "ntbook_edit" ntb.id %}">
+      <a class="name" href="{% url "ntbook_edit" ntb.id %}">
       <pre>{{ ntb.name }}</pre></a>
       <br>
     <br>
@@ -19,7 +19,7 @@
 
 {% block meta %}
 {% for ntb in object_list %}
-<li>      <a href="{% url "ntbook_edit" ntb.id %}">
+<li>      <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
       {{ ntb.meta }}</a>
 </li>
 {% endfor %}

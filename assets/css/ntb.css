@@ -66,6 +66,7 @@ body {
   max-width: 90%;
   background: #eee;
   overflow: auto;
+  color: #838383;
 }
 
 /*-jer- this rule allows the pre element to wrap IF it needs to*/
@@ -113,6 +114,11 @@ body {
   display: none;
 }
 
+a { text-decoration-line: none; }
+a.name:hover   { color: green; }
+a.meta:hover   { color: green; }
+a.meta { color: #eee;}
+a.name { color: black;}
 
 @media only screen and (max-width: 798px)  {
 
