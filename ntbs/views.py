@@ -11,12 +11,12 @@ class NtbookList(ListView):
 class NtbookCreate(CreateView):
     model = Ntbook
     success_url = reverse_lazy('ntbook_list')
-    fields = ['name', 'meta']
+    fields = ['snippet', 'meta']
 
 class NtbookUpdate(UpdateView):
     model = Ntbook
     success_url = reverse_lazy('ntbook_list')
-    fields = ['name', 'meta']
+    fields = ['snippet', 'meta']
 
 class NtbookDelete(DeleteView):
     model = Ntbook
