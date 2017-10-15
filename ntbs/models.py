@@ -3,8 +3,8 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 class Ntbook(models.Model):
-    name = models.CharField(max_length=2048)
-    meta = models.CharField(max_length=2048)
+    name = models.TextField(max_length=2048)
+    meta = models.TextField(max_length=2048)
 
 
     def __str__(self):
