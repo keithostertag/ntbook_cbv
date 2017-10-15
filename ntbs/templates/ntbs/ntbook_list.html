@@ -19,7 +19,8 @@
 
 {% block meta %}
 {% for ntb in object_list %}
-<li>{{ ntb.meta }}
+<li>      <a href="{% url "ntbook_edit" ntb.id %}">
+      {{ ntb.meta }}</a>
 </li>
 {% endfor %}
 {% endblock meta%}

@@ -46,6 +46,7 @@ body {
   white-space: wrap;
   background: #838383;
   color: white;
+  overflow: auto;
 }
 
 .splitter {
@@ -64,6 +65,7 @@ body {
   min-width: 10%;
   max-width: 90%;
   background: #eee;
+  overflow: auto;
 }
 
 /*-jer- this rule allows the pre element to wrap IF it needs to*/
