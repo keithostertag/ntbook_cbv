@@ -2,27 +2,25 @@
 
 
 {% block content %}
-<ul>
+<ul class="snippet">
     {% for ntb in object_list %}
     <li>{{ ntb.id }})
-      <a class="name" href="{% url "ntbook_edit" ntb.id %}">
-      <pre>{{ ntb.name }}</pre></a>
-      <br>
-    <br>
-    <a href="{% url "ntbook_delete" ntb.id %}">delete</a>
-
+      <a class="snippet" href="{% url "ntbook_edit" ntb.id %}">
+        <pre>{{ ntb.name }}</pre></a>
+        <a href="{% url "ntbook_delete" ntb.id %}">delete</a>
     </li>
-    <br><hr><br>
+<hr>
     {% endfor %}
 </ul>
 {% endblock content%}
 
 {% block meta %}
 {% for ntb in object_list %}
-<li>      <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
+<ul class="meta">
+  <li> <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
       {{ ntb.meta }}</a>
-</li>
+  </li>
+</ul>
 {% endfor %}
-{% endblock meta%}
 
-<a href="{% url "ntbook_new" %}">New</a>
+{% endblock meta%}

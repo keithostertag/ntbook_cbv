@@ -114,11 +114,17 @@ body {
   display: none;
 }
 
-a { text-decoration-line: none; }
-a.name:hover   { color: green; }
+/*styling for snippets, links and ul's*/
+.snippet  {list-style: none;}
+pre {padding-bottom: 1rem;}
+pre {padding-top: 1rem;}
+li  {padding-top: 1rem}
+a   { text-decoration-line: none; }
+a.snippet { color: black;}
+a.snippet:hover   { color: green; }
 a.meta:hover   { color: green; }
 a.meta { color: #eee;}
-a.name { color: black;}
+
 
 @media only screen and (max-width: 798px)  {
 
