@@ -19,7 +19,7 @@
 {% for ntb in object_list %}
   {% if ntb.meta %}
   <li> <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
-      {{ ntb.meta }}</a>
+      {{ ntb.meta }}<br>{{ ntb.created_at|date:"SHORT_DATE_FORMAT" }}</a>
   </li>
 {% endif %}
 {% endfor %}
