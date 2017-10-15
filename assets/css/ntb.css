@@ -125,6 +125,7 @@ a.snippet:hover   { color: green; }
 a.meta:hover   { color: green; }
 a.meta { color: #eee;}
 
+.delete { display: block;text-align: right;}
 
 @media only screen and (max-width: 798px)  {
 

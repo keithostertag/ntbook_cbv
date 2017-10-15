@@ -7,7 +7,7 @@
     <li>{{ ntb.id }})
       <a class="snippet" href="{% url "ntbook_edit" ntb.id %}">
         <pre>{{ ntb.name }}</pre></a>
-        <a href="{% url "ntbook_delete" ntb.id %}">delete</a>
+        <a class="delete" href="{% url "ntbook_delete" ntb.id %}">delete</a>
     </li>
 <hr>
     {% endfor %}
