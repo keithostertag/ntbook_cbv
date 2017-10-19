@@ -9,7 +9,7 @@ class NtbookList(ListView):
 
 
 # In the following, we need to include the fields for creating and updating
-# use reverse_lazy to return to the main template ntbook_list.html after completing each generic view
+# Use reverse_lazy to return to the main template ntbook_list.html after completing each generic view
 class NtbookCreate(CreateView):
     model = Ntbook
     success_url = reverse_lazy('ntbook_list')
