@@ -38,11 +38,10 @@ body {
   flex: 0 0 auto;
   padding: 1rem;
   height: 100%;
-  /*-jer- setting width to 35% will make the panel-left element start out
-  a little smaller than the panel-right by default*/
+   /*panel-left element start out a little smaller than the panel-right by default*/
   width: 25%;
-  min-width: 10%;
-  max-width: 75%;
+  /*min-width: 10%; just to make sure we don't lose the vertical drag bar by dragging it all the way to the left*/
+  max-width: 85%;
   white-space: wrap;
   background: #838383;
   color: white;
@@ -59,7 +58,7 @@ body {
 
 .panel-right {
   flex: 1 1 auto;
-  /* resizable */
+  /* resizable by dragging vertical bar*/
   padding: 1rem 1rem 1rem 2rem;
   height: 100%;
   min-width: 10%;
@@ -69,7 +68,7 @@ body {
   color: #838383;
 }
 
-/*-jer- this rule allows the pre element to wrap IF it needs to*/
+/*allow the pre element to wrap IF it needs to*/
 .panel-right pre {
   white-space: pre-wrap;
 }
@@ -78,7 +77,7 @@ body {
   display: flex;
   flex-direction: row;
   width:  100%;
-  /*-jer- place the items in the panel-bottom to the right*/
+  /* place the buttons in the panel-bottom to the right*/
   justify-content: flex-end;
   height: 8%;
   background: #eee;
@@ -97,25 +96,26 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
-  /*-jer- make background of nav inherit parent background color*/
+  /* make background of nav inherit parent background color */
   background: inherit;
 }
 
 .button {
   background: #fff;
   border: 1px solid silver;
-  /*-jer- added width and a little margin to make pretty*/
+  /* added width and a little margin to make easier on the eye :-) */
   width: 65px;
   margin: 5px;
 }
 
-/*hide smallsize heading for device width > 798*/
+/* hide smallsize heading for device width > 798 */
 .smallsize  {
   display: none;
 }
 
-/*styling for snippets, links and ul's*/
-.snippet  {list-style: none;}
+/* styling for snippets, links and ul's */
+/*.snippet  {list-style: none;}*/
+ul  {list-style: none;}
 pre {padding-bottom: 1rem;}
 pre {padding-top: 1rem;}
 li  {padding-top: 1rem}
@@ -133,7 +133,7 @@ a.meta { color: #eee;}
   display: block;
 }
 
-/*hide fullsize heading for device width <= 798*/
+/* hide fullsize heading for device width <= 798 */
 .fullsize  {
   display: none;
 }
@@ -143,4 +143,4 @@ a.meta { color: #eee;}
 }
 
 
-} /*end media queries*/
+} /* end media queries */
