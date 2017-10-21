@@ -10,15 +10,22 @@ from ntbs.models import Ntbook
 class NtbookList(ListView):
     model = Ntbook
 
+# pass the count of records to the ListView so we can display total_snippets
+    def get_context_data(self, **kwargs):
+            context = super(NtbookList, self).get_context_data(**kwargs)
+            context['total_snippets'] = Ntbook.objects.filter().count()
+            return context
+
 # We search both the snippet and meta fields for strings/keywords.
 # Using icontains is adequate for this type/size application.
     def get_queryset(self):
-            try:
-                q = (Ntbook.objects.filter(meta__icontains=self.request.GET['q'])
-                    | Ntbook.objects.filter(snippet__icontains=self.request.GET['q']))
-                return q
-            except:
-                return Ntbook.objects.all()
+
+        try:
+            q = (Ntbook.objects.filter(meta__icontains=self.request.GET['q'])
+                | Ntbook.objects.filter(snippet__icontains=self.request.GET['q']))
+            return q
+        except:
+            return Ntbook.objects.all()
 
 # In the following, we need to include the fields for creating and updating.
 # Use reverse_lazy to return to the main template ntbook_list.html after completing each generic view.
