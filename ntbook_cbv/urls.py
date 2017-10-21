@@ -23,6 +23,5 @@ from ntbs import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ntbs/', include('ntbs.urls')),
-    # url(r'^$', include('ntbs.urls')),
     url(r'^$', views.NtbookList.as_view(), name='ntbook_list'),
 ]
