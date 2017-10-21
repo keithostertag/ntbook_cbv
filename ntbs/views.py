@@ -10,7 +10,7 @@ from ntbs.models import Ntbook
 class NtbookList(ListView):
     model = Ntbook
 
-# pass the count of records to the ListView so we can display total_snippets
+# pass total_snippets to the ListView so we can display it
     def get_context_data(self, **kwargs):
             context = super(NtbookList, self).get_context_data(**kwargs)
             context['total_snippets'] = Ntbook.objects.filter().count()
