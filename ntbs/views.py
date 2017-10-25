@@ -1,11 +1,21 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
-# from django.forms import ModelForm, modelformset_factory
-# from django.http import HttpResponseRedirect
-from django import forms
+# from django import forms
+from django.forms import ModelForm, Textarea
 
 from ntbs.models import Ntbook
+
+class NtbookForm(ModelForm):    # using this for create and update
+    class Meta:
+        model = Ntbook
+        fields = ('snippet', 'meta')
+        # customize because the default is too small visually
+        widgets = {
+            'snippet': Textarea(attrs={'cols': 80, 'rows': 20, 'class': 'form'}),
+            'meta': Textarea(attrs={'cols': 80, 'rows': 20}),
+        }
+        template = "ntbook_list"
 
 class NtbookList(ListView):
     model = Ntbook
@@ -32,12 +42,12 @@ class NtbookList(ListView):
 class NtbookCreate(CreateView):
     model = Ntbook
     success_url = reverse_lazy('ntbook_list')
-    fields = ['snippet', 'meta']
+    form_class = NtbookForm # customize form using NtbookForm
 
 class NtbookUpdate(UpdateView):
     model = Ntbook
     success_url = reverse_lazy('ntbook_list')
-    fields = ['snippet', 'meta']
+    form_class = NtbookForm # customize form using NtbookForm
 
 class NtbookDelete(DeleteView):
     model = Ntbook

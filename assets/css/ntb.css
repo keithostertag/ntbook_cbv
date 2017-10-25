@@ -84,6 +84,11 @@ body {
   background: #eee;
 }
 
+.form {
+  background: #838383;
+  color: white;
+}
+
 .total {
   height: 100%;
   flex: 3 1 auto;
