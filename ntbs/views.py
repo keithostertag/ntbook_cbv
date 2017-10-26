@@ -6,7 +6,7 @@ from django.forms import ModelForm, Textarea
 
 from ntbs.models import Ntbook
 
-class NtbookForm(ModelForm):    # using this for create and update
+class NtbookForm(ModelForm):    # using this form for create and update
     class Meta:
         model = Ntbook
         fields = ('snippet', 'meta')
@@ -15,7 +15,7 @@ class NtbookForm(ModelForm):    # using this for create and update
             'snippet': Textarea(attrs={'class': 'form_snippet'}),
             'meta': Textarea(attrs={'class': 'form_meta'}),
         }
-# 'cols': 80, 'rows': 20, 
+
 class NtbookList(ListView):
     model = Ntbook
 
@@ -32,6 +32,8 @@ class NtbookList(ListView):
         try:
             q = (Ntbook.objects.filter(meta__icontains=self.request.GET['q'])
                 | Ntbook.objects.filter(snippet__icontains=self.request.GET['q']))
+            # if not q.exists():
+            #     q = Ntbook.objects.all()
             return q
         except:
             return Ntbook.objects.all()

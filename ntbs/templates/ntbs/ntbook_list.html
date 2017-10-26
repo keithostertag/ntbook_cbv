@@ -9,6 +9,10 @@
         <pre><code>{{ ntb.snippet }}</code></pre></a>
         <a class="delete" href="{% url "ntbook_delete" ntb.id %}">delete</a>
     </li>
+    {% empty %}
+    <li>Sorry, no records match that search. Try another search, or just
+      click on the empty search form to return to the full snippet display.
+      Remember: the search assumes whatever you type in the search box is a string.</li>
 <hr>
     {% endfor %}
 </ul>
