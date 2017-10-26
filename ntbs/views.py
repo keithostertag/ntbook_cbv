@@ -12,11 +12,10 @@ class NtbookForm(ModelForm):    # using this for create and update
         fields = ('snippet', 'meta')
         # customize because the default is too small visually
         widgets = {
-            'snippet': Textarea(attrs={'cols': 80, 'rows': 20, 'class': 'form'}),
-            'meta': Textarea(attrs={'cols': 80, 'rows': 20}),
+            'snippet': Textarea(attrs={'class': 'form_snippet'}),
+            'meta': Textarea(attrs={'class': 'form_meta'}),
         }
-        template = "ntbook_list"
-
+# 'cols': 80, 'rows': 20, 
 class NtbookList(ListView):
     model = Ntbook
 

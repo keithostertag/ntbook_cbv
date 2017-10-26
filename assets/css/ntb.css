@@ -84,17 +84,38 @@ body {
   background: #eee;
 }
 
-.form {
-  background: #838383;
-  color: white;
+/*to style input areas when using update or create*/
+.form_snippet  {
+  width: 95%;
+  height: 40%;
+  background: #eee;
+  overflow: auto;
+  color: #838383;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-.total {
+/*to style input areas when using update or create*/
+.form_meta {
+  width: 95%;
+  height: 40%;
+  background: #838383;
+  color: white;
+  overflow: auto;
+  margin-top: 1rem;
+}
+
+.updateform form  { /*to style input areas when using update or create*/
+  padding: 1rem;
+}
+
+.updateform form label  { display: block;}  /*to style input areas when using update or create*/
+
+.total {  # this is for the total snippets: line in the bottom panel
   height: 100%;
   flex: 3 1 auto;
   background: #eee;
   border: 1px solid silver;
-
 }
 
 .nav  {

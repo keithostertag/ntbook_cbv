@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 
-
+{# this block goes into the right panel #}
 {% block content %}
 <ul class="snippet">
     {% for ntb in object_list %}
@@ -14,7 +14,7 @@
 </ul>
 {% endblock content%}
 
-
+{# this block goes into the left panel #}
 {% block meta %}
 <ul class="meta">
 {% for ntb in object_list %}

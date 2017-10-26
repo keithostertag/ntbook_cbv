@@ -1,4 +1,19 @@
+{% load static from staticfiles %}
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ntbook - a simple desktop code snippet database app</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/ntb.css' %}" />
+
+  {# using the cdn version of highlightjs for syntax highlighting of the code snippets #}
+    <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+</head>
+
+<div class='updateform'>
 <form method="post">{% csrf_token %}
-    {{ form.as_p }}
+    {{ form.as_p }}<br>
     <input type="submit" value="Submit" />
 </form>
+</div>
