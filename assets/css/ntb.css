@@ -109,9 +109,11 @@ body {
   padding: 1rem;
 }
 
-.updateform form label  { display: block;}  /*to style input areas when using update or create*/
+/*to style input areas when using update or create*/
+/*force the label to appear above the textareas*/
+.updateform form label  { display: block;}
 
-.total {  # this is for the total snippets: line in the bottom panel
+.total {  # this is for the total snippets line in the bottom panel
   height: 100%;
   flex: 3 1 auto;
   background: #eee;
@@ -152,7 +154,27 @@ a.snippet:hover   { color: green; }
 a.meta:hover   { color: green; }
 a.meta { color: #eee;}
 
+/*place the delete link on the right bottom of snippet*/
 .delete { display: block;text-align: right;}
+
+/*styling for the form used by ntbook_confirm_delete.html*/
+/*note: the styling for the snippet code itself is under class form_snippet*/
+.confirm_delete {
+  padding: 2rem;
+  height: 80%;
+  width: 80%;
+  background: #eee;
+  overflow: auto;
+  color: black;
+  /*center this div on the page*/
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+
+}
 
 @media only screen and (max-width: 798px)  {
 
