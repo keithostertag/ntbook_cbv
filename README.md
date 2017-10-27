@@ -2,7 +2,7 @@
 
 Typical use: type in a code snippet or note (or just paste it in) then optionally
 include meta data about your snippet. Often the meta may be more actual lines/text
-than your code, as you may want to include how you use the code, where you found it, or other background info that you may want to reference in the future.  
+than your code, as you may want to include how you use the code, where you found it, or other background info that you may want to reference in the future. You could also use it for, say, poetry- put your poems in the snippet field and discussion in the meta field...the snippet field will retain your formatting.  
 
 #### Features:  
 * The vertical bar that splits the two main panels can be dragged to alter their relative sizes (courtesy of https://github.com/RickStrahl/jquery-resizable ).  
