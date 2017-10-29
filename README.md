@@ -20,5 +20,5 @@ return to the full display.
 * Designed for desktop or other devices with a minimum dimension of 800x600.  
 * Access by pointing your browser to localhost:8000 after running the server. For django admin access: localhost:8000/admin/ login is 'admin' password is 'codelouisville'.  
 
-### Screenshot
+#### Screenshot
 ![Screenshot](ntbook.png "Screenshot")
