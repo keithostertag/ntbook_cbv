@@ -1,24 +1,27 @@
 {% load static from staticfiles %}
 
+{# this template used for confirming delete, uses highlightjs and style #}
+
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ntbook - a simple desktop code snippet database app</title>
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/xcode.css' %}" />
     <link rel = "stylesheet" type = "text/css" href = "{% static 'css/ntb.css' %}" />
 
-  {# using the cdn version of highlightjs for syntax highlighting of the code snippets #}
-    <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
 </head>
-<body style="">
+<body>
     <div class="confirm_delete">
       <form method="post">{% csrf_token %}
           Are you sure you want to delete this snippet and its meta?
+          <br>
           <pre><code class="form_snippet">{{ object }}</code></pre>
           <br>
           <input type="submit" value="Submit" />
       </form>
     </div>
-
+    <script src="{% static 'js/highlight.pack.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

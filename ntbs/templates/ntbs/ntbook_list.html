@@ -4,8 +4,7 @@
 {% block content %}
 <ul class="snippet">
     {% for ntb in object_list %}
-    <li>{{ ntb.id }})
-      <a class="snippet" href="{% url "ntbook_edit" ntb.id %}">
+    <li>{{ ntb.id }})<a class="snippet" href="{% url "ntbook_edit" ntb.id %}">
         <pre><code>{{ ntb.snippet }}</code></pre></a>
         <a class="delete" href="{% url "ntbook_delete" ntb.id %}">delete</a>
     </li>
@@ -13,7 +12,8 @@
     {% empty %}
     <li>Sorry, no records match that search. Try another search, or just
       click on the empty search form to return to the full snippet display.
-      Remember: the search assumes whatever you type in the search box is a string.</li>
+      Remember: the search assumes whatever you type in the search box is a
+      string... so you can search for phrases!</li>
 
     {% endfor %}
 </ul>
@@ -24,8 +24,7 @@
 <ul class="meta">
 {% for ntb in object_list %}
   {% if ntb.meta %}
-  <li> {{ ntb.id }})
-    <a class="meta" href="{% url "ntbook_edit" ntb.id %}">
+  <li> {{ ntb.id }})<a class="meta" href="{% url "ntbook_edit" ntb.id %}">
       {{ ntb.meta }}<br>{{ ntb.created_at|date:"SHORT_DATE_FORMAT" }}</a>
   </li>
 {% endif %}

@@ -4,14 +4,18 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>ntbook - a simple desktop code snippet database app</title>
-    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/ntb.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/jquery.modal.min.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/xcode.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/ntb.css' %}" />
 
-  {# using the cdn version of highlightjs for syntax highlighting of the code snippets #}
-    <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-</head>
+  </head>
 
-    <body style="">
+    <body>
+
+      <div id="info">
+        <!-- used only for loading info.html by js (modal) when ?/infoButton is pressed -->
+      </div>
+
         <div class="page-container">
 
             <h2 class="fullsize">
@@ -21,17 +25,17 @@
             <h2 class="smallsize">
               ntbook - desktop code snippet database
            </h2>
-            <hr />
+
+          <hr />
 
             <div class="panel-container">
 
                 <div class="panel-left" >
                   meta:<p>
-                    {% block meta %}{% endblock%}
+                  {% block meta %}{% endblock%}
                 </div>
 
-                <div class="splitter">
-                </div>
+                <div class="splitter"></div>
 
                 <div class="panel-right">
                   Code snippets: <p><br>{% block content %}{% endblock content%}
@@ -39,12 +43,11 @@
 
             </div>     {# panel-container #}
 
-
-            <hr />
+          <hr />
 
             <div class="panel-bottom">
-              <div class="total"><br>total snippets: {{ total_snippets }}
-             </div>
+
+              <div class="total"><br>total snippets: {{ total_snippets }} </div>
 
     {# create searchbar for entering strings to search #}
                 <form method='GET' action=''>
@@ -54,22 +57,23 @@
 
               <div class="nav">
                   <button type="button" class="button"
-
-    {# create 'create' button to create a new snippet #}
-              onclick="location='{% url "ntbook_new" %}'">Create</button>
-                  <button type="button" class="button">?</button>
-
+                  {# create 'create' button to create a new snippet #}
+                  onclick="location='{% url "ntbook_new" %}'">Create</button>
+                  <button type="button" id="infoButton" class="button">?</button>
               </div> {# nav #}
 
             </div>  {# panel-bottom #}
 
         </div>  {# page-container #}
 
+
+{# jquery-resizeable used for dragging spittter bar, jquery.modal.min.js used for modal #}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="{% static 'js/jquery-resizeable.js' %}" type="text/javascript" charset="utf-8"></script>
-        <script src="{% static 'js/ntb.js' %}" type="text/javascript"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="{% static 'js/jquery.modal.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/highlight.pack.js' %}" type="text/javascript" charset="utf-8"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+        <script src="{% static 'js/ntb.js' %}" type="text/javascript"></script>
 
     </body>
     </html>
