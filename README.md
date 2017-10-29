@@ -18,4 +18,7 @@ return to the full display.
 * Proper installation of python3 (or use virtual environment) with django 1.11 or higher (might work with older versions but not tested)  
 * Working Internet connection: this is used only for the CDN access to **jquery** and a graphic for the vertical splitter bar from Rick Strahl.  
 * Designed for desktop or other devices with a minimum dimension of 800x600.  
-* Access by pointing your browser to localhost:8000 after running the server. For django admin access: localhost:8000/admin/ login is 'admin' password is 'codelouisville'.
+* Access by pointing your browser to localhost:8000 after running the server. For django admin access: localhost:8000/admin/ login is 'admin' password is 'codelouisville'.  
+
+### Screenshot
+![Screenshot](ntbook.png "Screenshot")
