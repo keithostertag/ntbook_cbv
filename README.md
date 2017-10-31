@@ -6,7 +6,7 @@ than your code, as you may want to include how you use the code, where you found
 
 #### Features:  
 * The vertical bar that splits the two main panels can be dragged to alter their relative sizes (courtesy of  https://github.com/RickStrahl/jquery-resizable ).  
-* Code snippets are syntax highlighted courtesy of https://highlightjs.org/ using the *xcode* style .  
+* Code snippets are syntax highlighted (courtesy of https://highlightjs.org/ using the *xcode* style ).  
 * Date added will appear under the meta section, if meta exists.  
 * Click on any snippet or meta to display or update.  
 * Search for a string/phrase using the search box. This will search both the snippet and meta fields.  Do not use Boolean logic or quotes.
