@@ -1,7 +1,8 @@
 // use resizeable-js for ability to resize right and left panels by dragging the splitter bar
-$(".panel-left").resizable({
+$(".panel-one").resizable({
   handleSelector: ".splitter",
   resizeHeight: false
+  // resizeWidth: false
 });
 
 
