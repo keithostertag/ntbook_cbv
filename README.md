@@ -12,11 +12,11 @@ than your code, as you may want to include how you use the code, where you found
 * Search for a string/phrase using the search box. This will search both the snippet and meta fields.  Do not use Boolean logic or quotes.
 * After any search, just click the 'search' button when the search bar is empty to
 return to the full display.  
-* Responsive Design: Flexbox used for scaling the main panels, media queries will alter heading and bottom panel layout, and switch the two main panels between row and column formats depending on deice size.
+* Responsive Design: Flexbox used for scaling the main panels, media queries will alter heading and bottom panel layout, and switch the two main panels between row and column formats depending on device size.
 
 #### Requirements:
 * Proper installation of python3 (or use virtual environment) with django 1.11 or higher (might work with older versions but not tested)  
-* Working Internet connection: this is used only for the CDN access to **jquery** and a graphic for the vertical splitter bar from Rick Strahl.  
+* Working Internet connection: this is used only for the CDN access to **jquery** and a graphic for the splitter bar from Rick Strahl.  
 * Designed for desktop or other devices with a minimum dimension of 800x600, but will work well on smaller devices (but probably not as small as a phone!).  
 * Access by pointing your browser to localhost:8000 after running the server. For django admin access: localhost:8000/admin/ login is 'admin' password is 'codelouisville'.  
 
