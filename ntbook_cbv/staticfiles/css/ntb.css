@@ -1,0 +1,214 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  }
+
+html,
+body {
+  height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+/*Most of these styles are used for the layout.html template which is extended by
+ntbook_list.html for display of records.
+
+ntbook_confirm_delete.html uses confirm_delete and form_snippet classes
+
+ntbook_form.html uses the updateform class
+
+*/
+
+
+.page-container {
+  height: 92%;
+  margin: 1rem;
+}
+
+
+/* contains the two horizontal panels, left and right*/
+.panel-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid silver;
+  overflow: hidden;
+  height: 92%;
+}
+
+.panel-left {
+  flex: 0 0 auto;
+  padding: 1rem;
+  height: 100%;
+   /*panel-left element start out a little smaller than the panel-right by default*/
+  width: 25%;
+  min-width: 10%;
+  /*just to make sure we don't lose the vertical drag bar by dragging it all the way to the left*/
+  max-width: 85%;
+  white-space: pre-line;
+  background: #838383;
+  color: white;
+  overflow: auto;
+}
+
+.splitter {
+  flex: 0 0 auto;
+  width: 1rem;
+  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+  height: 100%;
+  cursor: col-resize;
+}
+
+.panel-right {
+  flex: 1 1 auto;
+  /* resizable by dragging vertical bar*/
+  padding: 1rem 1rem 1rem 2rem;
+  height: 100%;
+  min-width: 10%; /*just so dragging too far right doesn't hide the panel*/
+  max-width: 90%;
+  background: #eee;
+  overflow: auto;
+  color: #838383;
+}
+
+/*allow the pre element to wrap IF it needs to*/
+.panel-right pre {
+  white-space: pre-wrap;
+}
+
+.panel-bottom {
+  display: flex;
+  flex-direction: row;
+  width:  100%;
+  /* place the buttons in the panel-bottom to the right*/
+  justify-content: flex-end;
+  height: 8%;
+  background: #eee;
+}
+
+/*to style input areas when using delete, update or create*/
+.form_snippet  {
+  width: 95%;
+  height: 40%;
+  background: #eee;
+  overflow: auto;
+  color: #838383;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+/*to style input areas when using update or create*/
+.form_meta {
+  width: 95%;
+  height: 40%;
+  background: #838383;
+  color: white;
+  overflow: auto;
+  margin-top: 1rem;
+  padding: 2rem;
+}
+
+.updateform form  { /*to style input areas when using update or create*/
+  padding: 1rem;
+}
+
+/*to style input areas when using update or create*/
+/*force the label to appear above the textareas*/
+.updateform form label  { display: block;}
+
+/*this is for the total snippets line in the bottom panel*/
+.total {
+  height: 100%;
+  flex: 3 1 auto;
+  background: #eee;
+  border: 1px solid silver;
+}
+
+.nav  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+  /* make background of nav inherit parent background color */
+  background: inherit;
+}
+
+.button {
+  background: #fff;
+  border: 1px solid silver;
+  /* added width and a little margin to make easier on the eye :-) */
+  width: 65px;
+  margin: 5px;
+}
+
+/* hide smallsize heading for device width > 798 */
+.smallsize  {
+  display: none;
+}
+
+/* styling for snippets, links and ul's */
+/* TODO: highlighting interferes with snippet hover */
+ul  {list-style: none;}
+pre {padding-bottom: 1rem;}
+pre {padding-top: 1rem;}
+li  {padding-top: 1rem}
+a   { text-decoration-line: none; }
+a.snippet { color: black;}
+a.snippet:hover   { color: green; }
+a.meta:hover   { color: green; }
+a.meta { color: #eee;}
+
+/*place the delete link on the right bottom of snippet*/
+.delete { display: block;text-align: right;}
+
+/*styling for the form used by ntbook_confirm_delete.html*/
+/*note: the styling for the snippet code itself is under class form_snippet*/
+.confirm_delete {
+  padding: 2rem;
+  height: 80%;
+  width: 80%;
+  background: #eee;
+  overflow: auto;
+  color: black;
+  /*center this div on the page*/
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+
+}
+
+/*info div is only used for including the info.html file (modal) when the infoButton is pressed*/
+#info {
+  display: block;
+  width: 50%;
+  font-size: 1.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+
+@media only screen and (max-width: 798px)  {
+
+.smallsize  {
+  display: block;
+}
+
+/* hide fullsize heading for device width <= 798 */
+.fullsize  {
+  display: none;
+}
+
+.panel-left {
+  min-width: 5rem;
+}
+
+
+} /* end media queries */

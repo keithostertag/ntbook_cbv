@@ -1,1 +1,1 @@
-web: python manage.py runserver
+web: gunicorn ntbook_cbv.wsgi --log-file -
