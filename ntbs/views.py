@@ -27,16 +27,15 @@ class NtbookList(ListView):
 
 # We search both the snippet and meta fields for strings/keywords.
 # Using icontains is adequate for this type/size application.
-    def get_queryset(self):
+# order_by('-created_at') will give us the list in reverse chrono order
 
+    def get_queryset(self):
         try:
-            q = (Ntbook.objects.filter(meta__icontains=self.request.GET['q'])
-                | Ntbook.objects.filter(snippet__icontains=self.request.GET['q']))
-            # if not q.exists():
-            #     q = Ntbook.objects.all()
+            q = (Ntbook.objects.order_by('-created_at').filter(meta__icontains=self.request.GET['q'])
+                | Ntbook.objects.order_by('-created_at').filter(snippet__icontains=self.request.GET['q']))
             return q
         except:
-            return Ntbook.objects.all()
+            return Ntbook.objects.order_by('-created_at').all()
 
 # In the following, we need to include the fields for creating and updating.
 # Use reverse_lazy to return to the main template ntbook_list.html after completing each generic view.
